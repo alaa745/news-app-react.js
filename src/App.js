@@ -7,7 +7,7 @@ function App() {
   return (
     <Routes >
       <Route index element={<HomeView />} />
-      <Route path="news-details" element={<NewsDetails />} />
+      <Route path="news-details/:id" element={<NewsDetails />} />
     </Routes>
     // <HomeView />
 
