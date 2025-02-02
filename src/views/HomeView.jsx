@@ -32,7 +32,10 @@ const HomeView = () => {
         try {
             let articlesList = await NewsApiController.fetchEveryThingNews(page);
             setPage((previousPage) => previousPage + 1);
-            dispatch(setArticles(articlesList));
+            dispatch(setArticles([
+                ...articles,
+                ...articlesList
+            ]));
             // setArticles([
             //     ...articles,
             //     ...articlesList
