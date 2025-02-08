@@ -5,8 +5,8 @@ class NewsApiController {
     static apiKey = "9614d10f335d4323b29a6246dead8f23";
     static topHeadlinesUrl = `top-headlines?country=us&apiKey=${this.apiKey}`;
 
-    static async fetchEveryThingNews(page) {
-        const everythingUrl = `everything?q=us+trump&page=${page}&apiKey=${this.apiKey}`;
+    static async fetchEveryThingNews(page , query = "us+trump") {
+        const everythingUrl = `everything?q=${query}&page=${page}&apiKey=${this.apiKey}`;
 
         try {
             

@@ -10,8 +10,8 @@ import VerticalArticleCard from "../components/VerticalArticleCard";
 import Footer from "../components/Footer";
 import TopHeadlinesSection from "../components/TopHeadlinesSection";
 import { useDispatch, useSelector } from "react-redux";
-import {setArticles} from "../redux/actions";
-import {setHeadlines} from "../redux/actions";
+import { setArticles, setSearchQuery } from "../redux/actions";
+import { setHeadlines } from "../redux/actions";
 
 const HomeView = () => {
     // const [articles, setArticles] = useState([]);
@@ -67,6 +67,17 @@ const HomeView = () => {
         fetchEveryThingNews();
         fetchHeadlines();
     }, []);
+
+    const searchNews = async (query) => {
+        console.log(query);
+
+        let searchResults = await NewsApiController.fetchEveryThingNews(page, query);
+        setPage((previousPage) => previousPage + 1);
+
+        dispatch(setArticles(
+            searchResults
+        ))
+    }
     return (
         <div className="main-wrapper">
             {
@@ -75,7 +86,7 @@ const HomeView = () => {
                     <div >
                         <div style={{ display: "flex", alignItems: "center", flexDirection: "column", justifyContent: "center", width: "100vw" }}>
                             <div style={{ width: "80%" }}>
-                                <FirstNav />
+                                <FirstNav searchNews={searchNews} />
                                 <SecondNav />
                                 <div style={{ height: "100%", width: "100%" }}>
                                     <div className="first-news-section col-lg-12 col-md-12">

@@ -1,6 +1,7 @@
 const initialState = {
     articles: [],
-    headlines: []
+    headlines: [],
+    searchQuery: "",
 }
 export default function reducer(state = initialState, action) {
     switch (action.type) {
@@ -14,6 +15,11 @@ export default function reducer(state = initialState, action) {
                 ...state,
                 headlines: action.payLoad
             };
+        case "SET_SEARCH":
+            return {
+                ...state,
+                searchQuery: action.payLoad
+            }
         default:
             return state;
     }

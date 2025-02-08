@@ -15,18 +15,19 @@ const SecondNav = () => {
     let navigate = useNavigate();
 
 
+
     const handleClickFirst = (ref) => {
-        // navigate("news-details");
-        ref.current.style.backgroundColor = "rgba(4, 89, 77, 1)";
-        ref2.current.style.backgroundColor = "";
-        ref3.current.style.backgroundColor = "";
-        ref4.current.style.backgroundColor = "";
-        ref5.current.style.backgroundColor = "";
-        ref6.current.style.backgroundColor = "";
-        ref7.current.style.backgroundColor = "";
-        ref8.current.style.backgroundColor = "";
-        ref9.current.style.backgroundColor = "";
-        ref10.current.style.backgroundColor = "";
+        navigate("news-details/1");
+        // ref.current.style.backgroundColor = "rgba(4, 89, 77, 1)";
+        // ref2.current.style.backgroundColor = "";
+        // ref3.current.style.backgroundColor = "";
+        // ref4.current.style.backgroundColor = "";
+        // ref5.current.style.backgroundColor = "";
+        // ref6.current.style.backgroundColor = "";
+        // ref7.current.style.backgroundColor = "";
+        // ref8.current.style.backgroundColor = "";
+        // ref9.current.style.backgroundColor = "";
+        // ref10.current.style.backgroundColor = "";
     }
     const handleClickSecknd = (ref) => {
         ref1.current.style.backgroundColor = "";
